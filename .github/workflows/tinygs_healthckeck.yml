@@ -1,0 +1,19 @@
+name: TinyGS Healthcheck
+
+on:
+  push:
+    branches: ["main"]
+  schedule:
+    - cron: "0 4,10,22 * * *" # JST 13:00, 19:00, 7:00
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+
+      - run: ruby tinygs_healthcheck.rb
