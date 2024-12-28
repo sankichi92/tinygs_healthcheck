@@ -3,8 +3,8 @@ name: TinyGS Healthcheck
 on:
   push:
     branches: ["main"]
-  schedule:
-    - cron: "0 10,22 * * *" # JST 19:00, 7:00
+  # schedule:
+  #   - cron: "0 10,22 * * *" # JST 19:00, 7:00
   workflow_dispatch:
 
 jobs:
